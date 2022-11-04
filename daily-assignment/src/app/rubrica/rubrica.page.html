@@ -1,0 +1,15 @@
+<app-add-contact (addContact)="onCreateContact($event)"></app-add-contact>
+<div class="container text-center">
+  <div class="row">
+    <div class="col">
+      <app-table-contacts
+        [contactList]="listaContatti"
+        (deleteContact)="onRemoveContact($event)"
+        (contactDetail)="onShowDetail($event)"
+      ></app-table-contacts>
+    </div>
+    <div class="col" *ngIf="infoContact">
+      <app-detail-contact [detailContact]="infoContact"></app-detail-contact>
+    </div>
+  </div>
+</div>
